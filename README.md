@@ -1,0 +1,2 @@
+# pysteroids
+Simple asteroids pygame.
