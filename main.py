@@ -11,8 +11,13 @@ def main():
     
     clock = pygame.time.Clock()
     dt = 0
-
+    
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    
+    Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
 
     # game loop
     pygame.event.pump() # no screen opens on mac without this for some reason
@@ -22,17 +27,15 @@ def main():
                 return
         # nothing above here
 
-
-        player.update(dt)
+        for entity in updatable:
+            entity.update(dt)
         
-
         # updates above this line
-        
-
         screen.fill(BLACK)
-        player.draw(screen)
         
-
+        for entity in drawable:
+            entity.draw(screen)
+        
         # draw calls above this line
         pygame.display.flip()
         # tick returns time passed since last frame, / 1000 to convert to ms
