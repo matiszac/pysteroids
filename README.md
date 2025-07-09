@@ -1,11 +1,12 @@
 # pysteroids
-- A simple asteroids pygame.
+### A simple asteroids pygame.
+
+## Requirements
+- ### This project requires [uv](https://docs.astral.sh/uv/getting-started/installation/) to be installed.
+
 ```bash
-# within project root
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 main.py
+# after uv is installed
+uv run main.py
 ```
 ### TO-DO
 - Add a scoring system
